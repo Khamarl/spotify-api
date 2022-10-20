@@ -3,7 +3,7 @@ const artists = require("../artists");
 
 class Artist {
   constructor(artist, id) {
-    (this.id = id),
+    (this.id = id + 1),
       (this.type = artist.type),
       (this.name = artist.name),
       (this.genre = artist.genre),
