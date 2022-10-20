@@ -21,6 +21,11 @@ class Artist {
       throw "Artist not found";
     }
   }
+
+  static showRandom() {
+    const randIdx = Math.floor(Math.random() * artists.length);
+    return new Artist(artists[randIdx], randIdx);
+  }
 }
 
 module.exports = Artist;

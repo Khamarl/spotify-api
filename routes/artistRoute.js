@@ -4,7 +4,7 @@ const artists = require("../controllers/artistController");
 
 router.get("/", artists.showArtists);
 
-// router.get("/random", artists.showRandom);
+router.get("/random", artists.random);
 
 router.get("/:id", artists.showById);
 

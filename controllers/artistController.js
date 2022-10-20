@@ -24,4 +24,13 @@ const showById = (req, res) => {
   }
 };
 
-module.exports = { showArtists, showById };
+const random = (req, res) => {
+  try {
+    const randomArtist = Artist.showRandom();
+    res.send(randomArtist);
+  } catch (err) {
+    res.status(500).send({ error: "Server error" });
+  }
+};
+
+module.exports = { showArtists, showById, random };
