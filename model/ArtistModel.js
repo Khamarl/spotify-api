@@ -11,17 +11,14 @@ class Artist {
   }
 
   static showArtists(arr) {
-    console.log(3)
-    if(arr.length) {
-        console.log(4)
-       const filter = artists.filter(artist => arr.includes(artist.id)).map((artist, idx) => new Artist(artist, idx))
-      
-       return filter;
+    if (arr.length) {
+      const filter = artists
+        .filter((artist) => arr.includes(artist.id))
+        .map((artist, idx) => new Artist(artist, idx));
+      return filter;
     } else {
-        console.log(5)
-        return artists.map((artist, idx) => new Artist(artist, idx));
+      return artists.map((artist, idx) => new Artist(artist, idx));
     }
-
   }
 
   static showById(idx) {
