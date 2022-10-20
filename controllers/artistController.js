@@ -3,10 +3,24 @@ const Artist = require("../model/ArtistModel");
 //create function to handle request and response for gathering all artists
 
 const showArtists = (req, res) => {
-  try {
-    const allArtists = Artist.showArtists();
+  //create empty array for to hold artists
+  let ids = []
+  console.log(req.query)
+    
+  if(req.query.ids) {
+    // map through queried ids, giving them an integer 
+    ids = req.query.ids.split(',').map(id => parseInt(id))
+    console.log(ids)
+  } 
+    try {
+        console.log(1)
+        console.log(Artist)
+    const allArtists = Artist.showArtists(ids);
+    console.log(allArtists)
+    console.log(2)
     res.send(allArtists);
   } catch (err) {
+    console.log(err)
     res.status(500).send({ error: "Artist catalogue not found" });
   }
 };
